@@ -92,3 +92,39 @@ function instalationBadge(attribute,description,color)
 {
     return `https://img.shields.io/badge/${attribute}-${description}-${color}`
 }
+
+function generateReadme(readme_input) {
+    return `# ${readme_input.project_title}
+    
+    ![](${readme_input.licence_badge})
+    
+    ${readme_input.description}
+       
+    ### Table of Contents
+    1. Installation
+    2. Usage
+    3. License
+    4. Contributing
+    5. Tests
+    6. Questions
+           
+    ### Installation 
+    ${readme_input.installation}
+          
+    ### Usage
+    ${readme_input.usage}
+    
+    ### License
+    ${readme_input.license}
+    
+    ### Contributing
+    ${readme_input.contributing}
+    
+    ### Tests
+    ${readme_input.tests}
+    
+    ### Questions
+    ${readme_input.github_username}
+    ${readme_input.github_email}
+    ${readme_input.github_profile}`;
+    }
