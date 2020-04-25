@@ -5,6 +5,7 @@ const axios = require("axios");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+/* Prompt user for input */
 function promptUser()
 {
     const questions = [
@@ -88,11 +89,14 @@ function promptUser()
     return inquirer.prompt(questions);
 }
 
-function instalationBadge(attribute,description,color)
+/* Returns a badge URL */
+function generateBadge(attribute,description,color)
 {
     return `https://img.shields.io/badge/${attribute}-${description}-${color}`
 }
 
+
+/* Generate Readme template */
 function generateReadme(readme_input) {
 return `# ${readme_input.project_title}
 
@@ -129,7 +133,7 @@ ${readme_input.github_email}
 ${readme_input.github_profile}`;
 }
 
-
+/* Calls github APi returns response */
 async function getGithubInfo(github_username,github_repo_name)
 {
     try 
@@ -144,7 +148,7 @@ async function getGithubInfo(github_username,github_repo_name)
     }
 }
 
-
+/* Write readme.md to file system  */
 async function writeReadme(readme_template)
 {  
     try {
@@ -173,7 +177,7 @@ async function init()
             {
                 let readme_input = {}
                 readme_input = answers;
-                readme_input.licence_badge = instalationBadge('License', answers.license,'brightgreen')
+                readme_input.licence_badge = generateBadge('License', answers.license,'brightgreen');
                 readme_input.github_profile = github_info.data.owner.avatar_url; 
                 const readme_template = generateReadme(readme_input);
                 const write_response = await writeReadme(readme_template);
