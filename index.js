@@ -128,3 +128,17 @@ function generateReadme(readme_input) {
     ${readme_input.github_email}
     ${readme_input.github_profile}`;
     }
+
+async function getGithubInfo(github_username,github_repo_name)
+{
+    try 
+    {
+        const queryUrl = `https://api.github.com/repos/${github_username}/${github_repo_name}`;
+        const api_response =  await axios.get(queryUrl);
+        return api_response;
+    }
+    catch(e)
+    {
+        console.error('API ERROR: ' + e);
+    }
+}
