@@ -87,3 +87,8 @@ function promptUser()
     ]; 
     return inquirer.prompt(questions);
 }
+
+function instalationBadge(attribute,description,color)
+{
+    return `https://img.shields.io/badge/${attribute}-${description}-${color}`
+}
