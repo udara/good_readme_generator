@@ -122,9 +122,13 @@ ${readme_input.contributing}
 ${readme_input.tests}
 
 ### Questions
-${readme_input.github_username}
-${readme_input.github_email}
-${readme_input.github_profile}`;
+Profile Image
+
+![Profile Picture](${readme_input.github_profile})
+
+Github Username: ${readme_input.github_username}
+
+Github email: ${readme_input.github_email}`
 }
 
 /* Calls github APi returns response */
