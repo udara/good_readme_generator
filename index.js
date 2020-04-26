@@ -13,7 +13,6 @@ function promptUser()
             type: 'input',
             name: 'project_title',
             message: 'Project Title : ',
-            default:'Code Quiz',
             validate: (title) => {
             let validation =  (title.length >= 3) ? true : 'At least 3 characters required';
             return validation;
@@ -22,20 +21,17 @@ function promptUser()
         {
             type: 'input',
             message: "Project Description : ",
-            name: "description",
-            default:'Timed code quiz with multiple-choice questions'
+            name: "description"
         },
         {
             type: 'input',
             message: "Installation : ",
-            name: "installation",
-            default:'```node app.js```',
+            name: "installation"
         },
         {
             type: 'input',
             message: "Usage :",
-            name: "usage",
-            default:'Require Node',
+            name: "usage"
         },
         {
             type: 'list',
@@ -50,25 +46,23 @@ function promptUser()
             type: 'input',
             message: "Contributing : ",
             name: "contributing",
-            default:'Udara Ranasinghe',
+            default:'Udara Ranasinghe'
         },
         {
             type: 'input',
             message: "Tests : ",
-            name: "tests",
-            default:'node test',
+            name: "tests"
         }, 
         {
             type: 'input',
             message: "Github username : ",
             name: "github_username",
-            default:'udara',
+            default:'udara'
         },
         {
             type: 'input',
             message: "Github repo name : ",
-            name: "github_repo_name",
-            default:'code_quiz',
+            name: "github_repo_name"
         },  
         {
             type: 'input',
@@ -100,7 +94,7 @@ function generateBadge(attribute,description,color)
 function generateReadme(readme_input) {
 return `# ${readme_input.project_title}
 
-![](${readme_input.licence_badge})
+![Badge](${readme_input.licence_badge})
 
 ${readme_input.description}
    
@@ -170,7 +164,6 @@ async function writeReadme(readme_template)
 async function init()
 {
     try {
-
         const answers = await promptUser();
         const github_info = await getGithubInfo(answers.github_username,answers.github_repo_name);
             if(github_info)
