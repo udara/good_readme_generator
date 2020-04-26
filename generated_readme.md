@@ -25,11 +25,12 @@ GNU
 Udara Ranasinghe
 
 ### Tests
-```node test```
+```note test```
 
 ### Questions
-udara
+Profile Image
+![Profile Picture](https://avatars0.githubusercontent.com/u/1111731?v=4)
 
-indi79@hotmail.com
+Github Username: udara
 
-https://avatars0.githubusercontent.com/u/1111731?v=4
+Github email: test@test.com
