@@ -2,9 +2,9 @@
 
 Create a command-line application that dynamically generates a README.md from a user's input. The application will be invoked with the following command:
 
-![](https://github.com/udara/good_readme_generator/master/screenshot.JPG)
+![](https://github.com/udara/good_readme_generator/blob/master/screenshot.JPG)
 
-Demo - https://www.youtube.com/watch?v=is_PjfA3EJE
+Demo - https://www.youtube.com/watch?v=is_PjfA3EJE (Select HD to see clearly)
 
 Sample readme - https://github.com/udara/good_readme_generator/blob/master/generated_readme.md
 
